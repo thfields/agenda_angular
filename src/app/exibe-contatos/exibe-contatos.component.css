@@ -9,3 +9,7 @@ div{
     justify-content: center;
     padding: 5%;
 }
+
+.botaoAdd{
+    width: 210px;
+}
