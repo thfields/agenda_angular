@@ -1,5 +1,7 @@
-table, th, td {
-    border: 1px solid #000;
-    border-collapse: collapse;
-    margin-top: 2%;
+.example-button-row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15%;
 }
