@@ -1,6 +1,5 @@
 <div class="row">
-    <div class="col col-lg-6 offset-3">
-        <h1>Agenda de Contatos</h1>
+    <div class="col col-lg-6 offset-3 ">
         <form>
             <div>
                 <mat-form-field class="example-full-width">
@@ -14,10 +13,26 @@
                     <input matInput id="tel" type="tel" #tel>
                 </mat-form-field>
             </div>
+
+
             <div>
-                <label for="aniv" class="form-label">Aniversário</label>
-                <input id="aniv" class="form-control" type="date" #aniv>
+                
+                <mat-label for="aniv" class="form-label">Aniversário</mat-label>
+                <input id="aniv" class="form-control" type="date" #aniv>                  
             </div>
+
+            
+            <div>
+                <mat-form-field class="example-full-width">
+                  <mat-label for="aniv">Aniversário</mat-label>
+                  <input matInput [matDatepicker]="anivPicker" placeholder="Escolha uma data" id="aniv" #aniv>
+                  <mat-datepicker-toggle matSuffix [for]="anivPicker"></mat-datepicker-toggle>
+                  <mat-datepicker #anivPicker></mat-datepicker>
+                </mat-form-field>
+            </div>
+ 
+              
+            
             <mat-form-field class="example-full-width">
                 <mat-label>Tipo</mat-label>
                 <select name="tipo" matNativeControl #ti>
@@ -41,5 +56,6 @@
         </form>
     </div>
 </div>
+
 
 
