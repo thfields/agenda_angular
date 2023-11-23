@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col col-lg-6 offset-3">
+        <h1>Agenda de Contatos</h1>
+        <form>
+            <div>
+                <label for="nome" class="form-label">Nome</label>
+                <input id="nome" class="form-control" type="text" #nm>
+            </div>
+            <div>
+                <label for="tel" class="form-label">Telefone</label>
+                <input id="tel" class="form-control" type="tel" #tel>
+            </div>
+            <div>
+                <label for="aniv" class="form-label">Aniversário</label>
+                <input id="aniv" class="form-control" type="date" #aniv>
+            </div>
+            <label for="tipo" class="form-label">Tipo</label>
+            <select name="tipo" class="form-select" id="tipo" #ti>
+                <option *ngFor="let tipoContato of tipo" [value]="tipoContato">{{tipoContato}}</option>
+            </select>
+            <div>
+                <input type="button" class="btn btn-primary mt-3" value="Adicionar"
+                    (click)="adicionar(nm.value, tel.value, ti.value, aniv.value)">
+            </div>
+        </form>
+    </div>
+</div>
