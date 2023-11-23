@@ -3,25 +3,43 @@
         <h1>Agenda de Contatos</h1>
         <form>
             <div>
-                <label for="nome" class="form-label">Nome</label>
-                <input id="nome" class="form-control" type="text" #nm>
+                <mat-form-field class="example-full-width">
+                    <mat-label for="nome">Nome</mat-label>
+                    <input matInput id="nome" type="text" #nm>
+                </mat-form-field>
             </div>
             <div>
-                <label for="tel" class="form-label">Telefone</label>
-                <input id="tel" class="form-control" type="tel" #tel>
+                <mat-form-field class="example-full-width">
+                    <mat-label for="tel">Telefone</mat-label>
+                    <input matInput id="tel" type="tel" #tel>
+                </mat-form-field>
             </div>
             <div>
                 <label for="aniv" class="form-label">Aniversário</label>
                 <input id="aniv" class="form-control" type="date" #aniv>
             </div>
-            <label for="tipo" class="form-label">Tipo</label>
-            <select name="tipo" class="form-select" id="tipo" #ti>
-                <option *ngFor="let tipoContato of tipo" [value]="tipoContato">{{tipoContato}}</option>
-            </select>
+            <mat-form-field class="example-full-width">
+                <mat-label>Tipo</mat-label>
+                <select name="tipo" matNativeControl #ti>
+                  <option *ngFor="let tipoContato of tipo" [value]="tipoContato">{{tipoContato}}</option>
+                </select>
+            </mat-form-field>
+              
+
             <div>
-                <input type="button" class="btn btn-primary mt-3" value="Adicionar"
-                    (click)="adicionar(nm.value, tel.value, ti.value, aniv.value)">
+                <mat-checkbox class="example-margin" #fav>Adicionar aos favoritos</mat-checkbox>
             </div>
+            
+            
+
+            <div class="example-button-row">
+                <button mat-fab extended color="accent" type="button" class="btn btn-primary mt-3" value="Adicionar"
+                  (click)="adicionar(nm.value, tel.value, ti.value, aniv.value, fav.checked)">Adicionar </button>
+            </div>
+
+
         </form>
     </div>
 </div>
+
+
